@@ -1,0 +1,36 @@
+.content-drop {
+    height: 240px;
+    overflow: auto;
+    visibility: hidden;
+}
+
+.content-drop li{
+    display: block;
+    background-color: rgb(20, 20, 20);
+    text-align: center;
+    padding: 10px 0px;
+    border-bottom: 1px solid rgb(43, 168, 226);
+    
+}
+
+.content-drop li a{
+    color: rgb(43, 168, 226);
+}
+
+/* display repos  */
+.activeUrl {
+    visibility: visible !important;
+}
+#submit {
+    cursor: pointer;
+}
+#button {
+    background-color: rgb(43, 168, 226);
+}
+.title {
+    font-weight: bold;
+}
+#link {
+    background-color: rgb(43, 168, 226);
+    color: #fff;
+}
