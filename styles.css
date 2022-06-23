@@ -23,6 +23,7 @@
 }
 #submit {
     cursor: pointer;
+    margin-top: 20px;
 }
 #button {
     background-color: rgb(43, 168, 226);
@@ -33,4 +34,5 @@
 #link {
     background-color: rgb(43, 168, 226);
     color: #fff;
+    
 }

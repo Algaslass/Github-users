@@ -41,9 +41,11 @@ function search(name) {
     fetch(`${url1}${name}`)
         .then(response => response.json())
         .then(respons => {
-
         const url = `https://api.github.com/users/${name}/repos`;
-        fetch(`${url}`).then(response => response.json()).then(data => {
+        fetch(`${url}`)
+        .then(response => response.json())
+        .then(data => {
+           console.log(respons.html_url)
             searching.innerHTML += `
             <div class="container">
             <div class="row">
@@ -52,13 +54,12 @@ function search(name) {
                 <div class="col s3">
                     <p>
                     <strong>Name:</strong> ${respons.login} <br><br> 
-                    <strong>Github:</strong> <a id='link' href="${respons.html_url}"> Link </a> <br><br> 
+                    <strong>Github:</strong> <a id="link" href="${respons.html_url}"> Link </a> <br><br> 
                     <strong>Public Repos:</strong> <span>${respons.public_repos}</span>
                     </p> 
                 </div> 
                 <div class="col s3 center">
                 <a class='dropdown btn' id= 'button' href='#' data-target='dropdown1'>All repos</a>
-        
                 <!-- Dropdown Structure -->
                 <ul class='content-drop'>${urlAllRepos(data)}</ul>
             </div>
@@ -90,7 +91,6 @@ submit.addEventListener('click', function (e) {
 
 // pour pourvoir afficher les repos quand on click
 searching.addEventListener('click', e=> {
-    e.preventDefault();
     if(e.target.classList.contains('dropdown')){
         e.target.nextElementSibling.classList.toggle('activeUrl');
     }
